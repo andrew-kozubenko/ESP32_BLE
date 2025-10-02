@@ -10,7 +10,7 @@ anchors = load_beacons()
 def on_connect(client, userdata, flags, rc):
     print("MQTT connected", rc)
     # subscribe to wildcard topic for your team
-    client.subscribe(f"hackyadro/{TEAM}/anchors/+/measurement")
+    client.subscribe("esp32/ble")
 
 def on_message(client, userdata, msg):
     print("Message:", msg.topic, msg.payload)
